@@ -9,7 +9,7 @@ start up:
 
 ```python -m venv ./financial```
 
-```./financial/bin/activate```
+```./financial/Scripts/activate```
 
 ```pip install -r requirements.txt```
 
