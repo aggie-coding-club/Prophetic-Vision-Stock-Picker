@@ -2,7 +2,8 @@ Commands and stuff for running the project
 
 
 
-financial commands:
+
+financial_modeling commands:
 
 start up:
 (windows)
