@@ -1,13 +1,11 @@
-#importing pandas as pd 
+#convets excel files to csv files
+#uses pandas and xlrd
+
 import pandas as pd 
 
+print("Enter ticker name")
 name = input()
-# Read and store content 
-# of an excel file
 
-
-# Write the dataframe object 
-# into csv file 
 read_file = pd.read_excel("Stocks/" + name + "/" + name + "_BS.xls")
 read_file.to_csv ("Stocks/" + name + "/" + name + "_BS.csv", 
 				index = None, 
@@ -21,14 +19,12 @@ read_file.to_csv ("Stocks/" + name + "/" + name + "_CF.csv",
 				header=True) 
 df2 = pd.DataFrame(pd.read_csv("Stocks/" + name + "/" + name + "_CF.csv"))
 
+
 read_file = pd.read_excel("Stocks/" + name + "/" + name + "_IS.xls") 
 read_file.to_csv ("Stocks/" + name + "/" + name + "_IS.csv", 
 				index = None, 
 				header=True) 
 df3 = pd.DataFrame(pd.read_csv("Stocks/" + name + "/" + name + "_IS.csv"))
-	
-# read csv file and convert 
-# into a dataframe object 
 
 # show the dataframe 
 df1

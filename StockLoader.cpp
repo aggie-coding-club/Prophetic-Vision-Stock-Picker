@@ -4,7 +4,6 @@
 #include <fstream>
 #include <sstream>
 
-
 using std::string, std::vector;
 
 class StockLoader{
@@ -17,7 +16,10 @@ class StockLoader{
     public:
         StockLoader(string ticker);
         vector<vector<string>> loadArray(string filename);
+        //to access the arrays
         vector<vector<string>> getBS();
+        vector<vector<string>> getCF();
+        vector<vector<string>> getIS();
 
 };
 
@@ -32,7 +34,10 @@ StockLoader::StockLoader(string ticker){
 vector<vector<string>> StockLoader::loadArray(string filename){
     std::ifstream stream(filename);
     vector<vector<string>> ary;
-    //if not open, print so to console
+    
+    if(!stream.is_open()){
+        std::cout << "File could not be opened." << std::endl;
+    }
 
     string line;
 
@@ -55,6 +60,14 @@ vector<vector<string>> StockLoader::loadArray(string filename){
 
 vector<vector<string>> StockLoader::getBS(){
     return BS;
+}
+
+vector<vector<string>> StockLoader::getCF(){
+    return CF;
+}
+
+vector<vector<string>> StockLoader::getIS(){
+    return IS;
 }
 
 
